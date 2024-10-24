@@ -12,7 +12,7 @@ class GetEventsCubit extends Cubit<BaseState<List<Event>>> {
 
   Future<void> getEvents() async {
     emit(const BaseState.loading());
-    final result = await _getEventsUseCase.call();
+    final result = await _getEventsUseCase();
     emit(result.fold(
       (error) => BaseState.failure(error: error),
       (events) {
