@@ -23,6 +23,7 @@ mixin _$EventModel {
   String get details => throw _privateConstructorUsedError;
   String get location => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
+  @TimeConverter()
   DateTime get time => throw _privateConstructorUsedError;
 
   /// Serializes this EventModel to a JSON map.
@@ -41,7 +42,11 @@ abstract class $EventModelCopyWith<$Res> {
           EventModel value, $Res Function(EventModel) then) =
       _$EventModelCopyWithImpl<$Res, EventModel>;
   @useResult
-  $Res call({String details, String location, String name, DateTime time});
+  $Res call(
+      {String details,
+      String location,
+      String name,
+      @TimeConverter() DateTime time});
 }
 
 /// @nodoc
@@ -93,7 +98,11 @@ abstract class _$$EventModelImplCopyWith<$Res>
       __$$EventModelImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String details, String location, String name, DateTime time});
+  $Res call(
+      {String details,
+      String location,
+      String name,
+      @TimeConverter() DateTime time});
 }
 
 /// @nodoc
@@ -142,7 +151,7 @@ class _$EventModelImpl extends _EventModel {
       {required this.details,
       required this.location,
       required this.name,
-      required this.time})
+      @TimeConverter() required this.time})
       : super._();
 
   factory _$EventModelImpl.fromJson(Map<String, dynamic> json) =>
@@ -155,6 +164,7 @@ class _$EventModelImpl extends _EventModel {
   @override
   final String name;
   @override
+  @TimeConverter()
   final DateTime time;
 
   @override
@@ -199,7 +209,7 @@ abstract class _EventModel extends EventModel {
       {required final String details,
       required final String location,
       required final String name,
-      required final DateTime time}) = _$EventModelImpl;
+      @TimeConverter() required final DateTime time}) = _$EventModelImpl;
   const _EventModel._() : super._();
 
   factory _EventModel.fromJson(Map<String, dynamic> json) =
@@ -212,6 +222,7 @@ abstract class _EventModel extends EventModel {
   @override
   String get name;
   @override
+  @TimeConverter()
   DateTime get time;
 
   /// Create a copy of EventModel
