@@ -22,4 +22,13 @@ class EventsRepositoryImpl implements EventsRepository {
       return const Left('Unknown Error');
     }
   }
+
+  @override
+  Future<Result<bool>> joinEvent() async {
+    try {
+      return Right(await _remoteDataSource.joinEvent());
+    } catch (e) {
+      return const Left('Unknown Error');
+    }
+  }
 }
