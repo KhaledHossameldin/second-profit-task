@@ -67,7 +67,7 @@ class EventDetailsScreen extends StatelessWidget {
             ),
             builder: (context, state) => state.maybeWhen(
               loading: () => const CircularProgressIndicator(),
-              orElse: () => const Text('Join'),
+              orElse: () => const Text('Join Event'),
             ),
           ),
         ),

@@ -17,7 +17,7 @@ class EventsRemoteDataSourceImpl implements EventsRemoteDataSource {
 
   @override
   Future<bool> joinEvent() async {
-    await Future.delayed(const Duration(seconds: 2));
+    await Future.delayed(const Duration(seconds: 1));
     return Random().nextBool();
   }
 }
