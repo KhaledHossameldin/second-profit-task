@@ -4,9 +4,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../core/cubits/base_state.dart';
 import '../../../../injection_container.dart';
-import '../../../../main.dart';
 import '../../domain/entities/event.dart';
 import '../cubits/get_events_cubit.dart';
+import '../widgets/event_item.dart';
 
 class EventsListScreen extends StatefulWidget {
   const EventsListScreen({super.key});
@@ -37,7 +37,7 @@ class _EventsListScreenState extends State<EventsListScreen> {
             padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
             itemCount: events.length,
             separatorBuilder: (_, __) => 16.verticalSpace,
-            itemBuilder: (_, index) => Text(events[index].name),
+            itemBuilder: (_, index) => EventItem(item: events[index]),
           ),
           orElse: () => const Material(),
         ),
