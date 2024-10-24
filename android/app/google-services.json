@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "29574502",
+    "project_id": "second-profit-task",
+    "storage_bucket": "second-profit-task.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:29574502:android:2aedc796073eb88da934a7",
+        "android_client_info": {
+          "package_name": "com.khaledhossameldin.event_explorer"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDS6DcSh_ki5UXtJ0pBX_OUX_e-zlkqmck"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
