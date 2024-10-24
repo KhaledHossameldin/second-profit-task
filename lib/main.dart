@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:toastification/toastification.dart';
 
-import 'features/events/presentation/screens/events_list_screen.dart';
+import 'core/utils/app_router.dart';
 import 'firebase_options.dart';
 import 'injection_container.dart' as di;
 
@@ -24,14 +24,14 @@ class MyApp extends StatelessWidget {
       splitScreenMode: true,
       designSize: const Size(375, 812),
       child: ToastificationWrapper(
-        child: MaterialApp(
+        child: MaterialApp.router(
           debugShowCheckedModeBanner: false,
           title: 'Event Explorer',
           theme: ThemeData(
             colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
             useMaterial3: true,
           ),
-          home: const EventsListScreen(),
+          routerConfig: di.sl<AppRouter>().router,
         ),
       ),
     );

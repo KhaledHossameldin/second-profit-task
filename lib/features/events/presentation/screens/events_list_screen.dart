@@ -11,6 +11,8 @@ import '../widgets/event_item.dart';
 class EventsListScreen extends StatefulWidget {
   const EventsListScreen({super.key});
 
+  static const route = '/events';
+
   @override
   State<EventsListScreen> createState() => _EventsListScreenState();
 }

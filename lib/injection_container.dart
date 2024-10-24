@@ -1,5 +1,6 @@
 import 'package:get_it/get_it.dart';
 
+import 'core/utils/app_router.dart';
 import 'features/events/data/data_sources/remote/events_remote_data_source.dart';
 import 'features/events/data/repositories/events_repository_impl.dart';
 import 'features/events/domain/repositories/events_repository.dart';
@@ -25,4 +26,7 @@ void init() {
   sl.registerLazySingleton<EventsRemoteDataSource>(
     () => EventsRemoteDataSourceImpl(),
   );
+
+  //! External
+  sl.registerSingleton(AppRouter());
 }
