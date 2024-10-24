@@ -26,7 +26,11 @@ class EventsRepositoryImpl implements EventsRepository {
   @override
   Future<Result<bool>> joinEvent() async {
     try {
-      return Right(await _remoteDataSource.joinEvent());
+      final result = await _remoteDataSource.joinEvent();
+      if (!result) {
+        return const Left('Error joining event');
+      }
+      return const Right(true);
     } catch (e) {
       return const Left('Unknown Error');
     }
