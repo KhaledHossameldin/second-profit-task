@@ -1,7 +1,6 @@
-import 'package:fpdart/fpdart.dart';
-
+import '../../../../core/utils/types.dart';
 import '../entities/event.dart';
 
 abstract class EventsRepository {
-  Future<Either<String, List<Event>>> getEvents();
+  Future<Result<List<Event>>> getEvents();
 }

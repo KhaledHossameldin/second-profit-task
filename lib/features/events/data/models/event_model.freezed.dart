@@ -23,7 +23,7 @@ mixin _$EventModel {
   String get details => throw _privateConstructorUsedError;
   String get location => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
-  @TimeConverter()
+  @TimestampToDateTimeConverter()
   DateTime get time => throw _privateConstructorUsedError;
 
   /// Serializes this EventModel to a JSON map.
@@ -46,7 +46,7 @@ abstract class $EventModelCopyWith<$Res> {
       {String details,
       String location,
       String name,
-      @TimeConverter() DateTime time});
+      @TimestampToDateTimeConverter() DateTime time});
 }
 
 /// @nodoc
@@ -102,7 +102,7 @@ abstract class _$$EventModelImplCopyWith<$Res>
       {String details,
       String location,
       String name,
-      @TimeConverter() DateTime time});
+      @TimestampToDateTimeConverter() DateTime time});
 }
 
 /// @nodoc
@@ -151,7 +151,7 @@ class _$EventModelImpl extends _EventModel {
       {required this.details,
       required this.location,
       required this.name,
-      @TimeConverter() required this.time})
+      @TimestampToDateTimeConverter() required this.time})
       : super._();
 
   factory _$EventModelImpl.fromJson(Map<String, dynamic> json) =>
@@ -164,7 +164,7 @@ class _$EventModelImpl extends _EventModel {
   @override
   final String name;
   @override
-  @TimeConverter()
+  @TimestampToDateTimeConverter()
   final DateTime time;
 
   @override
@@ -206,10 +206,11 @@ class _$EventModelImpl extends _EventModel {
 
 abstract class _EventModel extends EventModel {
   const factory _EventModel(
-      {required final String details,
-      required final String location,
-      required final String name,
-      @TimeConverter() required final DateTime time}) = _$EventModelImpl;
+          {required final String details,
+          required final String location,
+          required final String name,
+          @TimestampToDateTimeConverter() required final DateTime time}) =
+      _$EventModelImpl;
   const _EventModel._() : super._();
 
   factory _EventModel.fromJson(Map<String, dynamic> json) =
@@ -222,7 +223,7 @@ abstract class _EventModel extends EventModel {
   @override
   String get name;
   @override
-  @TimeConverter()
+  @TimestampToDateTimeConverter()
   DateTime get time;
 
   /// Create a copy of EventModel

@@ -11,7 +11,8 @@ _$EventModelImpl _$$EventModelImplFromJson(Map<String, dynamic> json) =>
       details: json['details'] as String,
       location: json['location'] as String,
       name: json['name'] as String,
-      time: const TimeConverter().fromJson(json['time'] as Timestamp),
+      time: const TimestampToDateTimeConverter()
+          .fromJson(json['time'] as Timestamp),
     );
 
 Map<String, dynamic> _$$EventModelImplToJson(_$EventModelImpl instance) =>
@@ -19,5 +20,5 @@ Map<String, dynamic> _$$EventModelImplToJson(_$EventModelImpl instance) =>
       'details': instance.details,
       'location': instance.location,
       'name': instance.name,
-      'time': const TimeConverter().toJson(instance.time),
+      'time': const TimestampToDateTimeConverter().toJson(instance.time),
     };
