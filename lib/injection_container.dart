@@ -5,6 +5,7 @@ import 'features/events/data/data_sources/remote/events_remote_data_source.dart'
 import 'features/events/data/repositories/events_repository_impl.dart';
 import 'features/events/domain/repositories/events_repository.dart';
 import 'features/events/domain/use_cases/get_events_use_case.dart';
+import 'features/events/domain/use_cases/join_event_use_case.dart';
 import 'features/events/presentation/cubits/get_events_cubit.dart';
 
 final sl = GetIt.instance;
@@ -16,6 +17,7 @@ void init() {
 
   //! Use Cases
   sl.registerLazySingleton(() => GetEventsUseCase(repository: sl()));
+  sl.registerLazySingleton(() => JoinEventUseCase(repository: sl()));
 
   //! Repositories
   sl.registerLazySingleton<EventsRepository>(
